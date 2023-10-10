@@ -7,9 +7,68 @@
         //public delegate int RandomTest();
         static void Main(string[] args)
         {
+          
+
+
+
+            // Lambdas
+
+            // Events
+        } // Main
+
+        // Return type - double
+        // Paremeters - double, double
+
+        public static void SuperEfficentLikeCalculator()
+        {
             // Can a new delegate be created in a local scope
 
+            PerformCalculation result;
 
+            Console.WriteLine("Calculate");
+            Console.WriteLine("1 - Add");
+            Console.WriteLine("2 - Subtract");
+            Console.WriteLine("3 - Multiply");
+            Console.WriteLine("4 - Divide");
+            Console.Write("Enter your choice: ");
+            string userChoice = Console.ReadLine();
+
+            Console.Write("Enter number 1 : ");
+            double userNumber1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter number 2 : ");
+            double userNumber2 = double.Parse(Console.ReadLine());
+
+            string userSymbol;
+            switch (userChoice)
+            {
+                case "1":
+                    // Add
+                    userSymbol = "+";
+                    result = Add;
+                    break;
+                case "2":
+                    // Subtract
+                    userSymbol = "-";
+                    result = Subtract;
+                    break;
+                case "3":
+                    userSymbol = "*";
+                    result = Multiply;
+                    break;
+                case "4":
+                    userSymbol = "/";
+                    result = Divide;
+                    break;
+                default:
+                    userSymbol = "";
+                    result = Add;
+                    break;
+            }
+
+            double usersCalcuate = result(userNumber1, userNumber2);
+
+            Console.WriteLine($"{userNumber1} {userSymbol} {userNumber2} = {usersCalcuate} ");
 
             //-----------------------------------------------------------
 
@@ -27,16 +86,7 @@
 
 
 
-
-
-
-            // Lambdas
-
-            // Events
-        } // Main
-
-        // Return type - double
-        // Paremeters - double, double
+        }
 
         public static void DelegateExample()
         {
@@ -47,10 +97,6 @@
             // 1. Declare a delegate variable, with the assoicated method signature
             // 2. create a new instance of it
             PerformCalculation calculate = new PerformCalculation(Add);
-            // calculate = Add
-            // calculate(45,60) = Add(45,60)
-            //double result = Add(1, 2);
-            double result = calculate(1, 2);
 
 
             //PerformCalculation calculate = new PerformCalculation(Multiply);
@@ -67,7 +113,6 @@
 
 
 
-            Console.WriteLine("The result of my calculate delegate is " + result);
 
 
             //Console.WriteLine(result);
