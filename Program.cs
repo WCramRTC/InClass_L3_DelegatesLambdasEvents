@@ -7,17 +7,127 @@
         //public delegate int RandomTest();
         static void Main(string[] args)
         {
-          
 
+           
 
-
-            // Lambdas
 
             // Events
         } // Main
 
+        #region Lambdas
+
+        public static void LambdasExample()
+        {
+
+            // Lambdas - Anonymous Method
+            // The lambda symbol =>
+            // Delegate name = (parmeters) => code
+            Func<double, double, double> add = (x, y) => x + y;
+
+            List<int> numbers = new List<int>() { 1, 2, 3, 4, 56 };
+            // double SumOfNumbers(List<int>)
+            /*
+             * double sum = 0;
+             *             * foreach (int num in list) sum += num;
+             * return sum;
+             */
+
+            Func<List<int>, double> sumOfNumbers = list =>
+            {
+                double sum = 0;
+                foreach (var number in list)
+                {
+                    if (number == number)
+                    {
+                        sum += number;
+                    }
+
+                }
+                return sum;
+            };
+        }
+
+        #endregion
+
+        #region Ednalynns Chaining Code
+
+        public static void ChainingCode()
+        {
+            Func<List<int>, double> sumOfNumbersLinq = list => list.Sum();
+
+            // Action - No return type, paramters
+            Action<string> customMessage = x =>
+            {
+                Console.WriteLine($"Welcome to {x} class!");
+
+            };
+
+
+            customMessage("Programming 226");
+
+            // Built in methods and passing in delegates to get results by chaining returns
+
+            // Ednalynn code
+            Func<List<int>, double> sumOfEvenNumbers = list => list.Where(x => x % 2 == 0).Sum();
+
+            // Of numbers
+            // Call the where method on it, and pass in our condition, x % 2 == 0 true
+            // ListOfEven
+
+
+            Console.WriteLine("Ednalynn is a head of the game : " + sumOfEvenNumbers(numbers));
+
+
+
+            //Console.WriteLine(sumOfNumbers(numbers));
+
+
+
+            // double Add(double x, double y) { return x + y };
+
+        }
+
+        #endregion
+
+        #region Generic Delegates
+
+        // Generic Delegates
+
+        public static double SomeNumber()
+        {
+            return 5;
+        }
+
+        public static void GenericExample()
+        {
+            // Generic Delegates
+
+            // Predicate - Always returns a bool, and takes a single type
+            // bool DelegateName(string);
+            Predicate<string> startsWithA = StartsWithA;
+
+            // Action - Has a void return type, can take upto 15 combinations of parameters
+            Action<string, string, double> randomMethod = RandomMethod;
+
+            // Func - You can assign return type and params in declaration
+            // The last type placed in the carrots will always be the return type
+            Func<double, double, double> calculate = Add;
+            Func<int, string, bool, double, bool, int, string, bool> whatever;
+        }
+
+        public static void RandomMethod(string a, string b, double c)
+        {
+
+        }
+
+        public static bool StartsWithA(string word)
+        {
+            return word[0] == 'A';
+        }
+
         // Return type - double
         // Paremeters - double, double
+        #endregion
 
         public static void SuperEfficentLikeCalculator()
         {
@@ -88,6 +198,8 @@
 
         }
 
+        #region Delegate
+
         public static void DelegateExample()
         {
             // Delegates
@@ -140,6 +252,8 @@
         {
             return num1 - num2;
         }
+
+        #endregion
 
     } // class
 } // namespace
